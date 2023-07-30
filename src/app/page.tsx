@@ -1,53 +1,25 @@
-import Image from 'next/image'
+'use client'
+import { Values, schema } from '@/components/form-schemas'
+import InputForm from '@/components/hook-form-components/input/Input'
+import InputMaskForm from '@/components/hook-form-components/input/InputMask'
+import InputMoneyForm from '@/components/hook-form-components/input/InputMoney'
+import InputNumberForm from '@/components/hook-form-components/input/InputNumber'
+import { teste } from '@/data/usecases/giveup-solicitation'
+import testeget from '@/data/usecases/teste-get'
+import useFetch from '@/hooks/useFetch'
+import { useRequest } from '@/hooks/useRequest'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
 
 export default function Home() {
+  const { handleSubmit, control: c, trigger: t } = useForm({ resolver: yupResolver(schema) })
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <header className="flex">
-        <div>
-          <div>imagem</div>
-          <div>
-            <div className="search_bar">
-              <img src="" alt="search_icon"></img>
-              <input type="search" />
-              <select name="" id="">
-                <option value="">Nintendo</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <div>
-              <img src="" alt="support" />
-              suporte
-            </div>
-            <div>
-              <img src="" alt="wish_list" />
-              Lista de desejos
-            </div>
-            <div>
-              <img src="" alt="user_icon" />
-              Iniciar sessão / Criar uma conta
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <img src="" alt="Jogos" />
-            <p>Jogos</p>
-            <p>{'>'}</p>
-          </div>
-          <div>
-            <img src="" alt="Jogos" />
-            <p>Nintendo Switch</p>
-            <p>{'>'}</p>
-          </div>
-          <div>
-            <img src="" alt="Jogos" />
-            <p>Novidades</p>
-            <p>{'>'}</p>
-          </div>
-        </div>
-      </header>
+      <p>teste kkKKKKKKKKKKKKKKKKK</p>
+      <InputForm<Values> t={t} c={c} name="nome" label="nome" fullWidth max={5} />
+      <InputMaskForm<Values> t={t} c={c} name="cpf" mask="999999999-99/999-9" label="test" fullWidth />
+      <InputNumberForm<Values> t={t} c={c} name="idade" label="teste" max={3} variant="filled" fullWidth />
+      <InputMoneyForm<Values> t={t} c={c} name="preco" label="teste" variant="filled" fullWidth />
     </main>
   )
 }

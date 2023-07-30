@@ -1,4 +1,4 @@
-import { cartData } from '@/data/cart'
+import { cartData } from '@/store/cart'
 import formatReal from '@/utils/formatCurrency'
 import Image from 'next/image'
 import React from 'react'
