@@ -1,4 +1,4 @@
-import { Input } from '@/components/Input/Input'
+import { Input } from '@/components/Inputs/Input'
 import { Control, Controller, FieldValues, Path, UseFormTrigger } from 'react-hook-form'
 
 interface InputFormProps<FormValues extends FieldValues> {
@@ -9,6 +9,7 @@ interface InputFormProps<FormValues extends FieldValues> {
   fullWidth?: boolean
   max?: number
   t?: UseFormTrigger<FormValues>
+  type?: string
 }
 
 const InputForm = <FormValues extends FieldValues>({
@@ -19,6 +20,7 @@ const InputForm = <FormValues extends FieldValues>({
   fullWidth,
   max,
   t,
+  type,
 }: InputFormProps<FormValues>) => {
   return (
     <Controller
@@ -37,6 +39,7 @@ const InputForm = <FormValues extends FieldValues>({
             if (t) await t(name)
           }}
           helperText={fieldState.error?.message}
+          type={type}
         />
       )}
     />

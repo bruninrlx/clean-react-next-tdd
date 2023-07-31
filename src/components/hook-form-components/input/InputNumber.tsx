@@ -1,4 +1,4 @@
-import { InputNumber } from '@/components/Input/InputNumber'
+import { InputNumber } from '@/components/Inputs/InputNumber'
 import { Control, Controller, FieldValues, Path, UseFormTrigger } from 'react-hook-form'
 
 interface InputFormProps<FormValues extends FieldValues> {

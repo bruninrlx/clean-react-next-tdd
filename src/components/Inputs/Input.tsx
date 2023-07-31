@@ -19,12 +19,6 @@ export const Input: FC<TextFieldProps & { maxLength?: number }> = ({
   }
 
   return (
-    <TextField
-      type="text"
-      {...props}
-      value={value ?? valueWithoutController}
-      onChange={handleChange}
-      helperText={helperText}
-    />
+    <TextField {...props} value={value ?? valueWithoutController} onChange={handleChange} helperText={helperText} />
   )
 }

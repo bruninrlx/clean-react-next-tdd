@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios'
 import { useCallback, useState } from 'react'
-import { Mutation } from '../data/models/protocols/mutationtype'
-import { RequestBody, RequestQueryParams, RequestUrlParams } from '../data/models/protocols/requestParams'
+import { Mutation } from '../data/http/models/protocols/mutationtype'
+import { RequestBody, RequestQueryParams, RequestUrlParams } from '../data/http/models/protocols/requestParams'
 
 export const useRequest = (
   requestHttpClient: Mutation

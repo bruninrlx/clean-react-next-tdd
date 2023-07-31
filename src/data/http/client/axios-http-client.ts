@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import { HttpClient, HttpMethod, HttpRequest, Response } from '../../models/http'
+import { HttpClient, HttpMethod, HttpRequest, Response } from '../models/http'
 
 export class AxiosHttpClient implements HttpClient {
   constructor(private readonly method: HttpMethod, private readonly headers: any) {}

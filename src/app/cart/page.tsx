@@ -1,4 +1,4 @@
-import { cartData } from '@/store/cart'
+import { cartData } from '@/contexts/cart'
 import formatReal from '@/utils/formatCurrency'
 import Image from 'next/image'
 import React from 'react'
@@ -31,9 +31,7 @@ export default function CartTable() {
 
               {item.product}
             </td>
-            <td className="px-4 py-2 text-center text-gray-600 border-t border-b">
-              {formatReal(item.price)}
-            </td>
+            <td className="px-4 py-2 text-center text-gray-600 border-t border-b">{formatReal(item.price)}</td>
             <td className="px-4 py-2 text-center border-t border-b">
               <div className="inline-block px-5 py-1 border border-gray-200 bg-white text-gray-600 rounded">
                 {item.quantity}

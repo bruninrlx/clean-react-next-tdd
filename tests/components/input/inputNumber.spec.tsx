@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { InputNumber } from '../../../src/components/Input/InputNumber'
+import { InputNumber } from '../../../src/components/Inputs/InputNumber'
 
 test('Testing input number acceptance', () => {
   const { getByLabelText } = render(<InputNumber label="idade" />)
@@ -21,8 +21,6 @@ test('testing maxLength', () => {
 test('testing important props', () => {
   render(<InputNumber label="idade" maxLength={3} variant="outlined" fullWidth />)
   const input = screen.getByRole('textbox', { name: 'idade' })
-  const containsOutlined = Array.from(input.classList).some((className) =>
-    className.toLowerCase().includes('outlined')
-  )
+  const containsOutlined = Array.from(input.classList).some((className) => className.toLowerCase().includes('outlined'))
   expect(containsOutlined).toBe(true)
 })
